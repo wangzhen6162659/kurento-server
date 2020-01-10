@@ -9,7 +9,7 @@
 		<artifactId>kurento-tutorial</artifactId>
 		<version>6.11.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>kurento-one2many-call</artifactId>
+	<artifactId>kurento-live</artifactId>
 	<packaging>jar</packaging>
 
 	<!-- Project-level information -->
