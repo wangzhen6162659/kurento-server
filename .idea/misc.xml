@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/kurento-live/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/kurento-chroma/pom.xml" />
+        <option value="$PROJECT_DIR$/kurento-crowddetector/pom.xml" />
+        <option value="$PROJECT_DIR$/kurento-group-call/pom.xml" />
+        <option value="$PROJECT_DIR$/kurento-hello-world-recording/pom.xml" />
+        <option value="$PROJECT_DIR$/kurento-hello-world-repository/pom.xml" />
+        <option value="$PROJECT_DIR$/kurento-hello-world/pom.xml" />
+        <option value="$PROJECT_DIR$/kurento-magic-mirror/pom.xml" />
+        <option value="$PROJECT_DIR$/kurento-metadata-example/pom.xml" />
+        <option value="$PROJECT_DIR$/kurento-one2one-call-advanced/pom.xml" />
+        <option value="$PROJECT_DIR$/kurento-one2one-call-recording/pom.xml" />
+        <option value="$PROJECT_DIR$/kurento-one2one-call/pom.xml" />
+        <option value="$PROJECT_DIR$/kurento-platedetector/pom.xml" />
+        <option value="$PROJECT_DIR$/kurento-player/pom.xml" />
+        <option value="$PROJECT_DIR$/kurento-pointerdetector/pom.xml" />
+        <option value="$PROJECT_DIR$/kurento-rtp-receiver/pom.xml" />
+        <option value="$PROJECT_DIR$/kurento-send-data-channel/pom.xml" />
+        <option value="$PROJECT_DIR$/kurento-show-data-channel/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>
