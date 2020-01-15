@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.kurento.tutorial.one2manycall.dao.LiveMapper">
+  <!-- 通用查询结果列-->
+  <resultMap id="BaseResultMap" type="org.kurento.tutorial.one2manycall.entity.Live">
+    <id column="id" jdbcType="BIGINT" property="id"/>
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+    <result column="create_user" jdbcType="BIGINT" property="createUser"/>
+    <result column="update_user" jdbcType="BIGINT" property="updateUser"/>
+    <result column="name" jdbcType="VARCHAR" property="name"/>
+    <result column="desc" jdbcType="VARCHAR" property="desc"/>
+    <result column="tag" jdbcType="VARCHAR" property="tag"/>
+    <result column="follow" jdbcType="INTEGER" property="follow"/>
+    <result column="state" jdbcType="BIT" property="state"/>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name_, desc_, tag, follow, state
+  </sql>
+
+  <select id="selectUserList" resultMap="BaseResultMap">
+    SELECT * FROM c_live WHERE state=#{state}
+  </select>
+</mapper>

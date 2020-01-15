@@ -2,21 +2,23 @@ package org.kurento.tutorial.one2manycall.dto;
 
 import lombok.Builder;
 import lombok.Data;
+import org.kurento.tutorial.one2manycall.entity.Live;
+import org.kurento.tutorial.one2manycall.entity.User;
 
 @Data
 public class RoomResDTO {
   private Long id;
-  private Long userId;
   private String nickName;
-  private String userName;
+  private UserResDTO user;
+  private Live live;
   private String avatar;
 
   @Builder
-  public RoomResDTO(Long id, String nickName, Long userId, String userName, String avatar) {
+  public RoomResDTO(Long id, String nickName, UserResDTO user, Live live, String avatar) {
     this.id = id;
     this.nickName = nickName;
-    this.userId = userId;
-    this.userName = userName;
+    this.user = user;
+    this.live = live;
     this.avatar = avatar;
   }
 }

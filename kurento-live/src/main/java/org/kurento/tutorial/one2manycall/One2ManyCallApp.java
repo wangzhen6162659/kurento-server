@@ -18,6 +18,7 @@
 package org.kurento.tutorial.one2manycall;
 
 import org.kurento.client.KurentoClient;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -33,6 +34,8 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
  */
 @SpringBootApplication
 @EnableWebSocket
+//@MapperScan("org.kurento.tutorial.one2manycall.dao")
+@MapperScan({"org.kurento.tutorial.one2manycall.dao"})
 public class One2ManyCallApp implements WebSocketConfigurer {
 
   @Bean

@@ -44,6 +44,8 @@ public class UserSession {
   private final WebSocketSession session;
   private WebRtcEndpoint webRtcEndpoint;
   private MediaPipeline mediaPipeline;
+  private String token;
+  private String liveDesc;
 
   public UserSession(WebSocketSession session) {
     this.session = session;
@@ -76,5 +78,21 @@ public class UserSession {
 
   public void setMediaPipeline(MediaPipeline mediaPipeline) {
     this.mediaPipeline = mediaPipeline;
+  }
+
+  public String getToken() {
+    return token;
+  }
+
+  public void setToken(String token) {
+    this.token = token;
+  }
+
+  public String getLiveDesc() {
+    return liveDesc;
+  }
+
+  public void setLiveDesc(String liveDesc) {
+    this.liveDesc = liveDesc;
   }
 }

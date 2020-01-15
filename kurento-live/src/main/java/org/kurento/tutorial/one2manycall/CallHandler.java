@@ -134,6 +134,14 @@ public class CallHandler extends TextWebSocketHandler {
     return String.valueOf(jsonMessage.get("liveId"));
   }
 
+  //获取用户token
+  private String getToken(JsonObject jsonMessage) {
+    if (!jsonMessage.has("token")) {
+      return null;
+    }
+    return jsonMessage.get("token").getAsString();
+  }
+
   //获取房间对应viewmap
   private Map<String, UserSession> getLiveViewMap(JsonObject jsonMessage) {
     String liveId = getLiveId(jsonMessage);
@@ -155,7 +163,10 @@ public class CallHandler extends TextWebSocketHandler {
   //设置房间对应主播
   private UserSession setLivePresenter(WebSocketSession session, JsonObject jsonMessage) {
     String liveId = getLiveId(jsonMessage);
-    presenterUserSessions.put(liveId, new UserSession(session));
+    String token = getToken(jsonMessage);
+    UserSession userSession = new UserSession(session);
+    userSession.setToken(token);
+    presenterUserSessions.put(liveId, userSession);
     return presenterUserSessions.get(liveId);
   }
 
@@ -313,7 +324,7 @@ public class CallHandler extends TextWebSocketHandler {
   private synchronized void interaction(final WebSocketSession session, JsonObject jsonMessage)
     throws IOException {
     String msg = jsonMessage.get("msg").getAsString();
-    String user = jsonMessage.get("token").getAsString();
+    String user = jsonMessage.get("userInfo").getAsString();
     LocalDateTime now = LocalDateTime.now();
 
     JsonObject response = new JsonObject();

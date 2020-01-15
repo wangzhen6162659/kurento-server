@@ -1,4 +1,4 @@
-package org.kurento.tutorial.one2manycall;
+package org.kurento.tutorial.one2manycall.common;
 
 
 import org.springframework.context.annotation.Bean;
@@ -6,9 +6,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @Configuration
-public class CorsConfig {
+public class CorsConfig extends WebMvcConfigurerAdapter {
   private CorsConfiguration buildConfig() {
     CorsConfiguration corsConfiguration = new CorsConfiguration();
     corsConfiguration.addAllowedOrigin("*");
@@ -22,5 +24,15 @@ public class CorsConfig {
     UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
     source.registerCorsConfiguration("/**", buildConfig()); // 4
     return new CorsFilter(source);
+  }
+
+  @Bean
+  public BaseInterceptor baseInterceptor(){
+    return new BaseInterceptor();
+  }
+
+  @Override
+  public void addInterceptors(InterceptorRegistry registry) {
+    registry.addInterceptor(baseInterceptor());
   }
 }
